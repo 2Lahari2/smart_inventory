@@ -2,7 +2,8 @@ import serial, sys, time
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from yolo import check,send
+from yolo import send, run_yolo
+
 # Fetch the service account key JSON file contents
 cred = credentials.Certificate('smart-inventory.json')
 
@@ -16,11 +17,11 @@ start = 0
 end = 0
 
 while True:
-    if(check):
-        current_ref = ref
-        msg = send()
-        current_ref.set(msg)
-
+    msg = run_yolo()
+    print(f"msg:{msg}")
+    current_ref = ref
+    current_ref.set(msg)
+    time.sleep(20)
 
 # with serial.Serial(port=sys.argv[1], baudrate=sys.argv[2]) as ser:
 #     while ser.isOpen():

@@ -14,13 +14,25 @@
 initialize the SDK after all desired features are loaded, set useEmulator to false
 to avoid connecting the SDK to running emulators.
 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 <body>
-<p id="" style="font-size: 30px; white-space: nowrap;">Spot is empty</p>
-<p id="f" style="font-size: 30px; white-space: nowrap;">Spot is empty</p>
-
-<p id="full-indicator" style="font-size: 30px; white-space: nowrap;">Spot is empty</p>
+ <section class="showcase">
+    <header>
+      <h2 class="logo">MCES Experential Learning 2022</h2>
+    </header>
+    <div class="overlay"></div>
+    <div class="text">
+      <p id="full-indicator" style="font-size: 30px;">Exploring The World</p>
+    </div>
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+</div>
 <script type="module">
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js'
@@ -43,9 +55,9 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const fullRef = ref(database, '/');
 onValue(fullRef, (snapshot) => {
-const data = snapshot.val();
-var msg = document.getElementById('full-indicator');
-msg.innerHTML = data;
+    const data = snapshot.val();
+    var msg = document.getElementById('full-indicator');
+    msg.innerHTML = data;});
 </script>
 </body>
 </html>

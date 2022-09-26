@@ -8,7 +8,7 @@ import time
 import cv2
 import os
 
-"""cap = cv2.VideoCapture(1)
+"""cap  cv2.VideoCapture(1)
 #cap.set(cv2.CAP_PROP_AUTOFOCUS, 1)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 600)
